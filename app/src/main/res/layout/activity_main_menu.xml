@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/theme3"
+        android:background="@drawable/themeapp"
         >
 
         <RelativeLayout
@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/startButton"
                     android:text="Start"
-                    android:background="@drawable/corner"
+                    android:background="@drawable/questionrect"
                     android:onClick="onClickStart"
                     android:layout_marginTop="0dp"
                     android:layout_centerHorizontal="true"
@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_below="@+id/startButton"
-                    android:background="@drawable/corner"
+                    android:background="@drawable/questionrect"
                     android:onClick="onClickExit"
                     android:text="Exit" />
 

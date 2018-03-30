@@ -16,7 +16,7 @@ public class QuestionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activityquestion);
         iD+=getIntent().getIntExtra("id", 0);
         Button btn1 =  (Button) findViewById(R.id.btn1);
         btn1.setText(Question.getQuestions().get(iD).getAnswer()[0]);
@@ -31,44 +31,44 @@ public class QuestionActivity extends AppCompatActivity {
 
 }
 public void onStartClick(View v) {
-    Animation anim=AnimationUtils.loadAnimation(this,R.anim.myalpha);
+    Animation anim=AnimationUtils.loadAnimation(this,R.anim.buttonalpha);
     v.startAnimation(anim);
-    Intent intent = new Intent(this, Main2Activity.class);
+    Intent intent = new Intent(this, TrueActivity.class);
     intent.putExtra("iD",iD);
     switch (v.getId()) {
         case R.id.btn1:
             Button button1 = (Button) v;
             if (Question.getQuestions().get(iD).getAnswer()[Question.getQuestions().get(iD).getTrueAnswer()] == button1.getText()) {
-                button1.setBackgroundResource(R.drawable.two2);
+                button1.setBackgroundResource(R.drawable.trueanswer);
                 startActivity(intent);
-                overridePendingTransition(R.anim.myanimfinish,R.anim.myanim);
+                overridePendingTransition(R.anim.animstart,R.anim.myanim);
 
                 finish();
             }else {
-                button1.setBackgroundResource(R.drawable.two);
+                button1.setBackgroundResource(R.drawable.falseanswer);
             }
             break;
         case R.id.btn2:
             Button button2 = (Button) v;
             if (Question.getQuestions().get(iD).getAnswer()[Question.getQuestions().get(iD).getTrueAnswer()] == button2.getText()) {
-                button2.setBackgroundResource(R.drawable.two2);
+                button2.setBackgroundResource(R.drawable.trueanswer);
                 startActivity(intent);
-                overridePendingTransition(R.anim.myanimfinish,R.anim.myanim);
+                overridePendingTransition(R.anim.animstart,R.anim.myanim);
                 finish();
             }else {
-                button2.setBackgroundResource(R.drawable.two);
+                button2.setBackgroundResource(R.drawable.falseanswer);
 
             }
             break;
         case R.id.btn3:
             Button button3 = (Button) v;
             if (Question.getQuestions().get(iD).getAnswer()[Question.getQuestions().get(iD).getTrueAnswer()] == button3.getText()) {
-                button3.setBackgroundResource(R.drawable.two2);
+                button3.setBackgroundResource(R.drawable.trueanswer);
                 startActivity(intent);
-                overridePendingTransition(R.anim.myanimfinish,R.anim.myanim);
+                overridePendingTransition(R.anim.animstart,R.anim.myanim);
                 finish();
             }else {
-                button3.setBackgroundResource(R.drawable.two);
+                button3.setBackgroundResource(R.drawable.falseanswer);
 
 
             }
@@ -76,13 +76,13 @@ public void onStartClick(View v) {
         case R.id.btn4:
             Button button4 = (Button) v;
             if (Question.getQuestions().get(iD).getAnswer()[Question.getQuestions().get(iD).getTrueAnswer()] == button4.getText()) {
-                button4.setBackgroundResource(R.drawable.two2);
+                button4.setBackgroundResource(R.drawable.trueanswer);
                 startActivity(intent);
-                overridePendingTransition(R.anim.myanimfinish,R.anim.myanim);
+                overridePendingTransition(R.anim.animstart,R.anim.myanim);
                 finish();
                 break;
             }else {
-                button4.setBackgroundResource(R.drawable.two);
+                button4.setBackgroundResource(R.drawable.falseanswer);
 
             }
     }

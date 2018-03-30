@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.igor.whowantwillbemillioner.QuestionActivity"
-    android:background="@drawable/theme3">
+    android:background="@drawable/themeapp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,7 +31,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="40dp"
-                android:background="@drawable/corner"/>
+                android:background="@drawable/questionrect"/>
         </RelativeLayout>
 
         <LinearLayout
@@ -60,7 +60,7 @@
                     android:layout_height="75dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/corners"
+                    android:background="@drawable/buttoncorners"
                     android:text="@string/ans" />
 
                 <Button
@@ -71,7 +71,7 @@
                     android:layout_height="75dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/corners"
+                    android:background="@drawable/buttoncorners"
                     android:text="@string/ans2" />
             </LinearLayout>
             <LinearLayout
@@ -88,7 +88,7 @@
                     android:layout_height="75dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/corners"
+                    android:background="@drawable/buttoncorners"
                     android:text="@string/ans3" />
                 <Button
                     android:elevation="20dp"
@@ -97,7 +97,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="75dp"
                     android:layout_marginEnd="10dp"
-                    android:background="@drawable/corners"
+                    android:background="@drawable/buttoncorners"
                     android:text="@string/ans4"
                     android:layout_marginTop="20dp"/>
 
