@@ -45,17 +45,16 @@
                 android:layout_weight="1">
 
                 <Button
-
+                    android:layout_gravity="center"
                     android:layout_marginEnd="80dp"
                     android:layout_marginStart="80dp"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:id="@+id/startButton"
                     android:text="Играть"
-                    android:background="@drawable/buttoncorners"
+                    android:background="@drawable/questionrect"
                     android:onClick="onClickStart"
                     />
-
                 <Button
                     android:layout_marginEnd="80dp"
                     android:layout_marginStart="80dp"
@@ -63,9 +62,10 @@
                     android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:background="@drawable/buttoncorners"
+                    android:background="@drawable/questionrect"
                     android:onClick="onClickExit"
                     android:text="Выход" />
+
 
             </LinearLayout>
 

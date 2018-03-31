@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.igor.whowantwillbemillioner.QuestionActivity"
-    android:background="@drawable/themeapp">
+    android:background="@drawable/themeapp"
+    tools:context="com.example.igor.whowantwillbemillioner.QuestionActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipToPadding="false"
         android:orientation="vertical"
-        android:weightSum="1"
-        android:clipToPadding="false">
-
+        android:weightSum="1">
 
 
         <RelativeLayout
@@ -23,87 +22,87 @@
 
             <TextView
                 android:id="@+id/txt1"
-                android:gravity="center"
-                android:textSize="40sp"
-                android:text="@string/need"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp"
-                android:layout_marginStart="40dp"
-                android:background="@drawable/questionrect"/>
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/questionrect"
+                android:gravity="center"
+                android:text="@string/need"
+                android:textSize="35sp" />
         </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:orientation="horizontal"
-            >
-
+            android:orientation="horizontal">
 
 
             <LinearLayout
                 android:id="@+id/buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
-                android:layout_marginEnd="5dp">
+                android:orientation="vertical">
 
 
                 <Button
-                    android:textSize="13sp"
-                    android:elevation="20dp"
-                    android:onClick="onStartClick"
                     android:id="@+id/btn1"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/buttoncorners"
-                    android:text="@string/ans" />
-
-                <Button
-                    android:textSize="13sp"
+                    android:background="@drawable/questionrect"
                     android:elevation="20dp"
                     android:onClick="onStartClick"
+                    android:text="@string/ans"
+                    android:textSize="13sp" />
+
+                <Button
                     android:id="@+id/btn2"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/buttoncorners"
-                    android:text="@string/ans2" />
+                    android:background="@drawable/questionrect"
+                    android:elevation="20dp"
+                    android:onClick="onStartClick"
+                    android:text="@string/ans2"
+                    android:textSize="13sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/buttons2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginStart="1dp"
                 android:layout_weight="1"
-                android:layout_marginStart="1dp">
+                android:orientation="vertical">
+
                 <Button
-                    android:elevation="20dp"
-                    android:onClick="onStartClick"
                     android:id="@+id/btn3"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/buttoncorners"
-                    android:text="@string/ans3"
-                    android:textSize="13sp"/>
-                <Button
-                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/questionrect"
                     android:elevation="20dp"
                     android:onClick="onStartClick"
+                    android:text="@string/ans3" />
+
+                <Button
+
                     android:id="@+id/btn4"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/buttoncorners"
-                    android:text="@string/ans4"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/questionrect"
+                    android:elevation="20dp"
+                    android:onClick="onStartClick"
+                    android:text="@string/ans4" />
 
             </LinearLayout>
         </LinearLayout>
