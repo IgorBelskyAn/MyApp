@@ -17,27 +17,21 @@ import java.util.Random;
 
 public class QuestionActivity extends AppCompatActivity {
  int iD;
+ int index;
+ ArrayList<Integer>numbers;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activityquestion);
-        ArrayList<Question> questionList = new ArrayList<>();
-        questionList.addAll(Question.getQuestions());
-        ArrayList<Integer> numbers=new ArrayList<>();
-        for ( int i=0;i<questionList.size();i++){
-            numbers.add(i);
-        }
-        Collections.shuffle(numbers);//получается у меня все перемешивается в массиве
-        final Random random = new Random();
-        int index=random.nextInt(numbers.size());//и + еще рандомный индекс
+        Intent intent=getIntent();
+        if(intent.getIntegerArrayListExtra("Questions")==null){
+            index+=getIntent().getIntExtra("index2",0);
+            numbers=getIntent().getIntegerArrayListExtra("Numbers");
+            iD=numbers.indexOf(index);
+        }else{
+        numbers=intent.getIntegerArrayListExtra("Questions");
         iD=numbers.indexOf(index);
-        //но все равно бывает что идут два одинаковых друг за другом
-        // можно конечно сделать диапозон рандома поменьше, у меня вообще была идея сделать проверку на повтор
-        // ну собственно я ее сделал и она работала, но потом удалил и хотел сделать
-        //ArrayList вопросов, к-ые  уже были, потом там идут обмены инфой между активностями...
-        //  каждый раз я бы проверял если iD в числе вопросов, к-ые уже были если нет
-        // то подходит, если есть то перемешать массив, если не как не получить новый iD==>
-        //все вопросы были значит игра закончена
+        }
         Button btn1 =  (Button) findViewById(R.id.btn1);
         btn1.setText(Question.getQuestions().get(iD).getAnswer()[0]);
         Button btn2 =  (Button) findViewById(R.id.btn2);
@@ -54,10 +48,8 @@ public void onStartClick(View v) {
     Animation anim = AnimationUtils.loadAnimation(this, R.anim.buttonalpha);
     v.startAnimation(anim);
     Intent intent=new Intent(this,TrueActivity.class);
-    //ArrayList<Integer>checks=new ArrayList<>();
-    //checks.add(iD);
-   // intent.putExtra("check",checks);
-   // intent.putExtra("id",iD);
+    intent.putExtra("NumbersQ",numbers);
+    intent.putExtra("indexnow",index);
     Button button = (Button) v;
     String getAnswer = Question.getQuestions().get(iD).getAnswer()[Question.getQuestions().get(iD).getTrueAnswer()];
     if (button.getText().toString().equals(getAnswer)) {

@@ -10,20 +10,24 @@ import android.view.animation.AnimationUtils;
 import java.util.ArrayList;
 
 public class TrueActivity extends AppCompatActivity {
-   // ArrayList<Integer> check=new ArrayList<>();
+   ArrayList<Integer>check;
+   int IND;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitytrue);
-        //check=getIntent().getIntegerArrayListExtra("check");
+        IND=getIntent().getIntExtra("indexnow",0);
+        check=getIntent().getIntegerArrayListExtra("NumbersQ");
     }
     public void Click(View view){
-        Animation anim= AnimationUtils.loadAnimation(this,R.anim.buttonalpha);
+        Animation anim=AnimationUtils.loadAnimation(this,R.anim.buttonalpha);
         view.startAnimation(anim);
+        if (IND<=6){
         Intent intent=new Intent(this,QuestionActivity.class);
-        //intent.putExtra("TrueCheck",check);
+        intent.putExtra("Numbers",check);
+        intent.putExtra("index2",IND+1);
         startActivity(intent);
         finish();
-        }
+        }}
     }
 

@@ -10,6 +10,7 @@ import android.view.animation.AnimationUtils;
 import com.example.igor.whowantwillbemillioner.Entites.Question;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainMenuActivity extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     public void onClickExit(View view) {
-        Animation anim= AnimationUtils.loadAnimation(this,R.anim.buttonalpha);
+        Animation anim=AnimationUtils.loadAnimation(this,R.anim.buttonalpha);
         view.startAnimation(anim);
         finish();
     }
@@ -29,16 +30,13 @@ public class MainMenuActivity extends AppCompatActivity {
     public void onClickStart(View view) {
         Animation anim=AnimationUtils.loadAnimation(this,R.anim.buttonalpha);
         view.startAnimation(anim);
-      // int number=0;
-      // ArrayList<Question> questionList = new ArrayList<>();
-      //  questionList.addAll(Question.getQuestions());
-      //  ArrayList<Integer> numbers=new ArrayList<>();
-       // for ( int i=0;i<questionList.size();i++){
-         //   numbers.add(i);
-      //  }
+       ArrayList<Integer> numbers=new ArrayList<>();
+        for ( int i=0;i<Question.getQuestions().size();i++){
+           numbers.add(i);
+       }
+        Collections.shuffle(numbers);
         Intent intent = new Intent(this, QuestionActivity.class);
-        //intent.putExtra("Number", number);
-        //intent.putExtra("Questions", numbers);
+        intent.putExtra("Questions", numbers);
         startActivity(intent);
         overridePendingTransition(R.anim.animstart,R.anim.myanim);
         finish();
